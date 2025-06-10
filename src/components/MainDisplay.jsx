@@ -53,6 +53,10 @@ const MainDisplay = () => {
 
   // Function to randomly select 5 unique numbers from 1 to 20
   const randomSelect = () => {
+    if(amount > 0) {
+      alert("Please reset the selection before generating random numbers.");
+      return;
+    }
     const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
     const randomNumbers = [];
     while (randomNumbers.length < 5) {
@@ -66,6 +70,10 @@ const MainDisplay = () => {
 
   // Function to update selected numbers
   const updateSelectedNumbers = (number) => {
+     if(amount > 0) {
+      alert("Please reset before selecting numbers.");
+      return;
+    }
     if(selectedNumbers.length >= 5 && !selectedNumbers.includes(number)) {
       alert("You can only select up to 5 numbers.");
       return; 
